@@ -11,7 +11,9 @@ const Signin = () => {
   const handleSignin = async () => {
     signin(email, password);
 
-    window.location.href = 'http://localhost:3001/user-profile';
+    const username = email.split('@')[0];
+
+    window.location.href = `http://localhost:3001/user-profile?data=${encodeURIComponent(username)}`;
   };
 
   return (
