@@ -7,14 +7,28 @@ export const useAuth = () => {
 };
 
 export const AuthProvider = ({ children }) => {
+  const [users, setUsers] = useState([]);
   const [user, setUser] = useState(null);
 
   const signup = (email, password) => {
-    setUser({ email });
+    const existingUser = users.find((user) => user.email === email);
+    if (existingUser) {
+      console.log("User already exists.");
+      return;
+    }
+
+    const newUser = { email };
+    setUsers((prevUsers) => [...prevUsers, newUser]);
+    setUser(newUser);
   };
 
   const signin = (email, password) => {
-    setUser({ email });
+    const currentUser = users.find((user) => user.email === email);
+    if (currentUser) {
+      setUser(currentUser);
+    } else {
+      console.log("User not found.");
+    }
   };
 
   const signout = () => {
@@ -22,7 +36,7 @@ export const AuthProvider = ({ children }) => {
   };
 
   return (
-    <AuthContext.Provider value={{ user, signup, signin, signout }}>
+    <AuthContext.Provider value={{ user, users, signup, signin, signout }}>
       {children}
     </AuthContext.Provider>
   );

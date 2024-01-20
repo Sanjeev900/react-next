@@ -6,16 +6,11 @@ const UserProfile = () => {
   const router = useRouter();
   const receivedUsername = router.query.data || 'User';
 
-  const handleSignout = async () => {
-    window.location.href = 'https://xperium-rlwp19shn-sanjeevs-projects-dafd5770.vercel.app';
-  };
   return (
     <div>
       <h1>User Profile Page (Next.js)</h1>
       <br />
       <h3>Hi {receivedUsername}</h3>
-      <br />
-      <button type="button" onClick={handleSignout}>Sign Out</button>
     </div>
 
   );
