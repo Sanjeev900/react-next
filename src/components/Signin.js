@@ -13,7 +13,7 @@ const Signin = () => {
 
     const username = email.split('@')[0];
 
-    window.location.href = `http://localhost:3001/user-profile?data=${encodeURIComponent(username)}`;
+    window.location.href = `https://xperium-next-c2ofsil47-sanjeevs-projects-dafd5770.vercel.app/user-profile?data=${encodeURIComponent(username)}`;
   };
 
   return (

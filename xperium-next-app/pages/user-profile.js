@@ -7,7 +7,7 @@ const UserProfile = () => {
   const receivedUsername = router.query.data || 'User';
 
   const handleSignout = async () => {
-    window.location.href = 'http://localhost:3000/';
+    window.location.href = 'https://xperium-rlwp19shn-sanjeevs-projects-dafd5770.vercel.app';
   };
   return (
     <div>
