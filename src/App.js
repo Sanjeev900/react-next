@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './components/Home';
 import Signup from './components/Signup';
 import Signin from './components/Signin';
-import UserProfileLink from './components/UserProfileLink';
 import { AuthProvider } from './context/AuthContext';
 
 const App = () => {
@@ -14,7 +13,6 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/signin" element={<Signin />} />
-          <Route path="/user-profile-link" element={<UserProfileLink />} />
         </Routes>
       </AuthProvider>
     </Router>
